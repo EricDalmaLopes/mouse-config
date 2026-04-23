@@ -3,24 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solakaka SM809 Pro - Backup</title>
-    <!-- CSS Real do Mouse -->
-    <link rel="stylesheet" href="assets/index-DiYmX91C.css">
-    <!-- JS Real do Mouse -->
-    <script type="module" crossorigin src="assets/index-Dk7X8aER.js"></script>
+    <title>Solakaka SM809 Pro Config</title>
+    <!-- Tentativa de carregar o CSS com caminho relativo direto -->
+    <link rel="stylesheet" href="./assets/index-DiYmX91C.css">
 </head>
 <body>
     <div id="app"></div>
+    <!-- Tentativa de carregar o JS como módulo -->
+    <script type="module" crossorigin src="./assets/index-Dk7X8aER.js"></script>
     <script>
-        // Este é o segredo: forçar a rota ANTES do app carregar
+        // Força a aba do mouse a abrir
         window.location.hash = '#/device';
-        
-        // Se o app tentar voltar para a home, nós o empurramos de volta para o driver
-        window.addEventListener('hashchange', function() {
-            if (window.location.hash === '' || window.location.hash === '#/') {
-                window.location.hash = '#/device';
-            }
-        });
     </script>
 </body>
 </html>

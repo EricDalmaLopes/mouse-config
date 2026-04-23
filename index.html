@@ -2,13 +2,28 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Solakaka SM809 Pro - Backup Oficial</title>
+    <title>Solakaka SM809 Pro - Driver Backup</title>
     <style>
-        body, html, iframe { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; background: #000; }
+        body, html { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; background: #000; }
+        iframe { border: none; width: 100%; height: 100%; }
     </style>
 </head>
 <body>
-    <!-- Este "túnel" garante que o site carregue 100% das funções, abas e drivers -->
-    <iframe src="https://yuandaxin-tech.com" frameborder="0"></iframe>
+    <!-- O segredo está no link com o #/device no final dentro do src -->
+    <iframe id="mouse-driver" src="https://yuandaxin-tech.com"></iframe>
+
+    <script>
+        // Este script tenta manter o iframe na página de configuração
+        const iframe = document.getElementById('mouse-driver');
+        setInterval(() => {
+            try {
+                if (iframe.contentWindow.location.hash !== '#/device') {
+                    iframe.contentWindow.location.hash = '#/device';
+                }
+            } catch (e) {
+                // Bloqueio de segurança do navegador (CORS) - ignorar se ocorrer
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
